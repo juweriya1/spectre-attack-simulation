@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spectre v1: Attack Simulation</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+        h1 { font-size: 2.5em; margin-bottom: 0.5em; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
+        h2 { color: #2c3e50; margin-top: 40px; border-left: 5px solid #e74c3c; padding-left: 15px; }
+        h3 { color: #34495e; margin-top: 30px; }
+        .group-info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 30px; border: 1px solid #ddd; }
+        .video-placeholder { background: #000; color: #fff; height: 400px; display: flex; align-items: center; justify-content: center; margin: 20px 0; }
+        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', Courier, monospace; }
+        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; border-radius: 5px; border: 1px solid #ccc; }
+        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+
+    <h1>Spectre v1: Literature Review and Tutorial</h1>
+    <div class="group-info">
+        <strong>Authored by:</strong> Maryam (29287) and Juweriya (26787)
+    </div>
+
+    <h2>1. Executive Summary (Non-Technical)</h2>
+    <p>
+        Spectre is a critical security vulnerability affecting modern computer processors from Intel, AMD, and ARM. 
+        It exploits a feature called "speculative execution," where the processor tries to guess future commands to increase speed. 
+        Attackers can trick the processor into guessing wrong and momentarily accessing private data (like passwords). 
+        Although the processor discards the wrong guess, the data leaves faint traces in the system's memory cache, 
+        which attackers can measure and reconstruct.
+    </p>
+
+    <h2>2. Attack Simulation Video</h2>
+    <p>The following video demonstrates the setup, execution, and successful data leak using our PoC code.</p>
+    
+    <div class="video-placeholder">
+        [EMBED VIDEO HERE: Upload to YouTube, click Share > Embed, and paste the code here]
+    </div>
+
+    <h2>3. Academic Tutorial Report</h2>
+    
+    <h3>Introduction</h3>
+    <p>The original Spectre paper by Kocher et al. (2018) introduced the fundamental concepts underlying speculative execution attacks...</p>
+    
+    <p><em>(Paste the rest of the report sections, code, and references here...)</em></p>
+
+    <div class="footer">
+        <h3>Contribution Breakdown</h3>
+        <ul>
+            <li><strong>Maryam:</strong> Attack Simulation, Video Recording, PoC Development.</li>
+            <li><strong>Juweriya:</strong> Academic Report, Literature Review, Website Implementation.</li>
+        </ul>
+    </div>
+
+</body>
+</html>
