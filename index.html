@@ -1,58 +1,129 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spectre v1: Attack Simulation</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
-        h1 { font-size: 2.5em; margin-bottom: 0.5em; color: #2c3e50; border-bottom: 2px solid #2c3e50; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 40px; border-left: 5px solid #e74c3c; padding-left: 15px; }
-        h3 { color: #34495e; margin-top: 30px; }
-        .group-info { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 30px; border: 1px solid #ddd; }
-        .video-placeholder { background: #000; color: #fff; height: 400px; display: flex; align-items: center; justify-content: center; margin: 20px 0; }
-        code { background: #f4f4f4; padding: 2px 5px; border-radius: 3px; font-family: 'Courier New', Courier, monospace; }
-        pre { background: #f4f4f4; padding: 15px; overflow-x: auto; border-radius: 5px; border: 1px solid #ccc; }
-        .footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid #ccc; font-size: 0.9em; color: #666; }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Spectre v1 Attack Simulation</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+                line-height: 1.5;
+            }
+            h1 {
+                border-bottom: 1px solid #ccc;
+                padding-bottom: 10px;
+            }
+            h2 {
+                margin-top: 40px;
+            }
+            .group-info {
+                background: #eee;
+                padding: 10px;
+                border-radius: 4px;
+            }
+            .video-wrapper {
+                margin: 20px 0;
+            }
+            .download-btn {
+                display: inline-block;
+                background-color: #000;
+                color: #fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 4px;
+                font-weight: bold;
+            }
+            .footer {
+                margin-top: 50px;
+                border-top: 1px solid #ccc;
+                padding-top: 10px;
+                font-size: 0.9em;
+                color: #555;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <h1>Microarchitectural Security: Spectre v1 Simulation</h1>
 
-    <h1>Spectre v1: Literature Review and Tutorial</h1>
-    <div class="group-info">
-        <strong>Authored by:</strong> Maryam (29287) and Juweriya (26787)
-    </div>
+        <div class="group-info">
+            <p><strong>Group Members:</strong></p>
+            <ul>
+                <li>Maryam (29287)</li>
+                <li>Juweriya (26787)</li>
+                <li>Nukhba (29019)</li>
+            </ul>
+        </div>
 
-    <h2>1. Executive Summary (Non-Technical)</h2>
-    <p>
-        Spectre is a critical security vulnerability affecting modern computer processors from Intel, AMD, and ARM. 
-        It exploits a feature called "speculative execution," where the processor tries to guess future commands to increase speed. 
-        Attackers can trick the processor into guessing wrong and momentarily accessing private data (like passwords). 
-        Although the processor discards the wrong guess, the data leaves faint traces in the system's memory cache, 
-        which attackers can measure and reconstruct.
-    </p>
+        <!-- 1. NON-TECHNICAL SUMMARY -->
+        <h2>1. Executive Summary</h2>
+        <p>
+            Spectre is a security weakness found in many modern computer
+            processors. These processors try to work faster by “guessing” what
+            they will need to do next. Normally this guessing is harmless, but
+            Spectre shows that it can be tricked into revealing information that
+            should stay private.
+        </p>
+        <p>
+            In our demonstration, we show how an attacker can influence a
+            processor’s guesses and then observe small clues left behind to
+            figure out a piece of hidden data—such as part of a password. This
+            does not break the software itself; instead, it takes advantage of
+            the way the hardware is built.
+        </p>
+        <p>
+            The goal of our project is to explain how this type of vulnerability
+            works in an easy-to-understand way and to show a simple example of
+            how private information can be leaked when processors behave
+            unexpectedly.
+        </p>
 
-    <h2>2. Attack Simulation Video</h2>
-    <p>The following video demonstrates the setup, execution, and successful data leak using our PoC code.</p>
-    
-    <div class="video-placeholder">
-        [EMBED VIDEO HERE: Upload to YouTube, click Share > Embed, and paste the code here]
-    </div>
+        <!-- 2. VIDEO -->
+        <h2>2. Attack Simulation Video</h2>
+        <p>This video demonstrates our code leaking a secret string.</p>
 
-    <h2>3. Academic Tutorial Report</h2>
-    
-    <h3>Introduction</h3>
-    <p>The original Spectre paper by Kocher et al. (2018) introduced the fundamental concepts underlying speculative execution attacks...</p>
-    
-    <p><em>(Paste the rest of the report sections, code, and references here...)</em></p>
+        <div class="video-wrapper">
+            <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/OM5u6QmNw_g?si=iZvulXJzhtSmTWTB"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+            >
+            </iframe>
+        </div>
 
-    <div class="footer">
-        <h3>Contribution Breakdown</h3>
-        <ul>
-            <li><strong>Maryam:</strong> Attack Simulation, Video Recording, PoC Development.</li>
-            <li><strong>Juweriya:</strong> Academic Report, Literature Review, Website Implementation.</li>
-        </ul>
-    </div>
+        <!-- 3. REPORT LINK -->
+        <h2>3. Academic Tutorial Report</h2>
+        <p>
+            Click the button below to view the full technical analysis, code
+            breakdown, and mitigation strategies.
+        </p>
+        <p>
+            <a href="report.pdf" class="download-btn" target="_blank"
+                >Download Full Report (PDF)</a
+            >
+        </p>
 
-</body>
+        <!-- 4. CONTRIBUTIONS -->
+        <div class="footer">
+            <h3>Contribution Breakdown</h3>
+            <ul>
+                <li>
+                    <strong>Maryam:</strong> Attack Simulation, PoC Code, Video
+                    Recording.
+                </li>
+                <li>
+                    <strong>Juweriya & Nukhba:</strong> Literature Review,
+                    Report Writing, Web Presentation.
+                </li>
+            </ul>
+        </div>
+    </body>
 </html>
